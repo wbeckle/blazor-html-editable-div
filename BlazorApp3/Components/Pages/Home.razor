@@ -7,9 +7,9 @@
 
 <h1>Rich text editor</h1>
 
-<RichTextBox boxID="richBox-input"></RichTextBox>
+<RichTextBox boxID="richtext-input"></RichTextBox>
 
-<RichTextBox boxID="richBox-input2"></RichTextBox>
+<RichTextBox boxID="richtext-input2"></RichTextBox>
 
 
 
@@ -27,11 +27,11 @@
 
 	protected override async Task OnAfterRenderAsync(bool firstRender)
 	{
-		if (firstRender) text = new(await JS.InvokeAsync<string>("richTextValue", "richBox-input", text));
+		if (firstRender) text = new(await JS.InvokeAsync<string>("richTextValue", "richtext-input", text));
 	}
 
 	async Task GetCode()
 	{
-		text = new(await JS.InvokeAsync<string>("richTextValue", "richBox-input"));
+		text = new(await JS.InvokeAsync<string>("richTextValue", "richtext-input"));
 	}
 }
