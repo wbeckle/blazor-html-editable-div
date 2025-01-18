@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<base href="/" />
+	<link rel="stylesheet" href="@Assets["lib/bootstrap/dist/css/bootstrap.min.css"]" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+	<link rel="stylesheet" href="@Assets["app.css"]" />
+	<link rel="stylesheet" href="@Assets["BlazorApp3.styles.css"]" />
+	<ImportMap />
+	<link rel="icon" type="image/png" href="favicon.png" />
+	<HeadOutlet />
+</head>
+
+<body>
+	<Routes />
+	<script src="_framework/blazor.web.js"></script>
+	<script>
+			function richBoxAction(id, action) {
+			action === 'createLink' ? document.execCommand(action, false, window.getSelection().toString()) : document.execCommand(action);
+			document.getElementById(id).focus();
+		}
+
+		function richTextValue(id, value){
+			if (value){
+				document.getElementById(id).innerHTML = value;
+			}
+			return id ? document.getElementById(id).innerHTML : 'ERROR: No id provided';
+		}
+	</script>
+</body>
+
+</html>

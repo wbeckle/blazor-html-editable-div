@@ -1,0 +1,37 @@
+﻿@page "/"
+@inject IJSRuntime JS
+
+@rendermode InteractiveServer
+
+<PageTitle>Home</PageTitle>
+
+<h1>Rich text editor</h1>
+
+<RichTextBox boxID="richBox-input"></RichTextBox>
+
+<RichTextBox boxID="richBox-input2"></RichTextBox>
+
+
+
+<div>
+	<button class="btn btn-sm btn-primary shadow-sm" @onclick="GetCode">Get HTML</button>
+	<div class="card m-2">
+		<div class="card-body">
+			<pre>@text</pre>
+		</div>
+	</div>
+</div>
+
+@code {
+	string text = "Edit text <b>here</b>.";
+
+	protected override async Task OnAfterRenderAsync(bool firstRender)
+	{
+		if (firstRender) text = new(await JS.InvokeAsync<string>("richTextValue", "richBox-input", text));
+	}
+
+	async Task GetCode()
+	{
+		text = new(await JS.InvokeAsync<string>("richTextValue", "richBox-input"));
+	}
+}

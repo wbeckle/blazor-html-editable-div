@@ -1,0 +1,27 @@
+﻿<div class="richBox m-2">
+	<div class="richBox-bar">
+		<button class="btn btn-sm btn-default" type="button" id="richBox-bold" title="Bold" onclick="richBoxAction('richBox-input','bold')"><i class="bi-type-bold"></i></button>
+		<button class="btn btn-sm btn-default" type="button" id="richBox-italic" title="Italic" onclick="richBoxAction('richBox-input','italic')"><i class="bi-type-italic"></i></button>
+		<button class="btn btn-sm btn-default" type="button" id="richBox-underline" title="Underline" onclick="richBoxAction('richBox-input','underline')"><i class="bi-type-underline"></i></button>
+		<button class="btn btn-sm btn-default" type="button" id="richBox-strike" title="Strikethrough" onclick="richBoxAction('richBox-input','strikeThrough')"><i class="bi-type-strikethrough"></i></button>
+		<button class="btn btn-sm btn-default" type="button" id="richBox-left" title="Align Left" onclick="richBoxAction('richBox-input','justifyLeft')"><i class="bi-text-left"></i></button>
+		<button class="btn btn-sm btn-default" type="button" id="richBox-center" title="Align Center" onclick="richBoxAction('richBox-input','justifyCenter')"><i class="bi-text-center"></i></button>
+		<button class="btn btn-sm btn-default" type="button" id="richBox-right" title="Align Right" onclick="richBoxAction('richBox-input','justifyRight')"><i class="bi-text-right"></i></button>
+		<button class="btn btn-sm btn-default" type="button" id="richBox-right" title="Ordered List" onclick="richBoxAction('richBox-input','insertOrderedList')"><i class="bi-list-ol"></i></button>
+		<button class="btn btn-sm btn-default" type="button" id="richBox-right" title="Unordered List" onclick="richBoxAction('richBox-input','insertUnorderedList')"><i class="bi-list-ul"></i></button>
+		<button class="btn btn-sm btn-default" type="button" id="richBox-indent" title="Indent" onclick="richBoxAction('richBox-input','indent')"><i class="bi-indent"></i></button>
+		<button class="btn btn-sm btn-default" type="button" id="richBox-outdent" title="Outdent" onclick="richBoxAction('richBox-input','richBox-input','outdent')"><i class="bi-unindent"></i></button>
+		<span class="text-muted">|</span>
+		<button class="btn btn-sm btn-default" type="button" id="richBox-link" title="Create Link" onclick="richBoxAction('richBox-input','createLink')"><i class="bi-link"></i></button>
+		<button class="btn btn-sm btn-default" type="button" id="richBox-unlink" title="Remove Link" onclick="richBoxAction('richBox-input','unlink')"><i class="bi-cloud-slash"></i></button>
+		<span class="text-muted">|</span>
+		<button class="btn btn-sm btn-default" type="button" id="richBox-small" title="Decrease Text Size" onclick="richBoxAction('richBox-input','decreaseFontSize')"><small>A</small></button>
+		<button class="btn btn-sm btn-default" type="button" id="richBox-regular" title="Default Text Size" onclick="richBoxAction('richBox-input','removeFormat')">A</button>
+		<button class="btn btn-sm btn-default" type="button" id="richBox-large" title="Increase Text Size" onclick="richBoxAction('richBox-input','increaseFontSize')"><big>A</big></button>
+	</div>
+	<div class="richBox-input" id="@boxID" contenteditable></div>
+</div>
+
+@code {
+	[Parameter] public	string boxID { get; set; } = "richBox-input";
+}

@@ -1,0 +1,14 @@
+﻿.richBox {
+    height: 200px;
+    border: 1px solid lightgray;
+}
+
+.richBox-bar {
+    border-bottom: 1px solid lightgray;
+}
+
+.richBox-input {
+    height: 82%;  /* workaround: for some reason more than the div area is highlighted when focused */
+    overflow: auto;
+    padding: 5px;
+}
